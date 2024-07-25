@@ -12,27 +12,27 @@ st.title('PREDIKSI PENUNDAAN PENERBANGAN (DELAY FLIGHT)')
 col1, col2 = st.columns(2)
 
 with col1:
-    year = st.number_input('Tahun', min_value=2000, max_value=2100, value=2024)
+    year = st.number_input('Tahun', min_value=2000, max_value=2100, value=2024, step=1, format="%d")
 with col2:
-    month = st.number_input('Bulan', min_value=1, max_value=12, value=7)
+    month = st.number_input('Bulan', min_value=1, max_value=12, value=7, step=1, format="%d")
 with col1:
-    day = st.number_input('Hari', min_value=1, max_value=31, value=15)
+    day = st.number_input('Hari', min_value=1, max_value=31, value=15, step=1, format="%d")
 with col2:
-    day_of_week = st.number_input('Hari dalam Minggu (0=Senin, 1=Selasa, dll)', min_value=0, max_value=6, value=2)
+    day_of_week = st.number_input('Hari dalam Minggu (0=Senin, 1=Selasa, dll)', min_value=0, max_value=6, value=2, step=1, format="%d")
 with col1:
     airline = st.text_input('Maskapai (Contoh: AA)')
 with col2:
-    flight_number = st.number_input('Nomor Penerbangan', min_value=1, max_value=99999, value=1234)
+    flight_number = st.number_input('Nomor Penerbangan', min_value=1, max_value=99999, value=1234, step=1, format="%d")
 with col1:
     origin_airport = st.text_input('Bandara Asal (Contoh: JFK)')
 with col2:
     destination_airport = st.text_input('Bandara Tujuan (Contoh: LAX)')
 with col1:
-    scheduled_departure = st.number_input('Jadwal Keberangkatan (Contoh: 1000)')
+    scheduled_departure = st.number_input('Jadwal Keberangkatan (Contoh: 1000)', min_value=0, max_value=2359, value=1000, step=1, format="%d")
 with col2:
-    distance = st.number_input('Jarak (Contoh: 300)', min_value=0, value=300)
+    distance = st.number_input('Jarak (Contoh: 300)', min_value=0, value=300, step=1, format="%d")
 with col1:
-    scheduled_arrival = st.number_input('Jadwal Kedatangan (Contoh: 1500)')
+    scheduled_arrival = st.number_input('Jadwal Kedatangan (Contoh: 1500)', min_value=0, max_value=2359, value=1000, step=1, format="%d")
 
 # Kode untuk prediksi
 flight_diagnosis = ''
